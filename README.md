@@ -1,29 +1,23 @@
-# ACF Block Components for WordPress
+# ACF Custom Blocks For WordPress
 
 ACF Blocks plugin for WordPress for displaying custom content within pages and posts. **Requires [Advanced Custom Fields Pro](http://advancedcustomfields.com/pro), [ACF Term and Taxonomy Chooser](https://github.com/marktimemedia/acf-term-and-taxonomy-chooser), [ACF Post Type Selector](https://github.com/TimPerry/acf-post-type-selector) and [ACF Widget Area Field](https://wordpress.org/plugins/advanced-custom-fields-widget-area-field/)**.
 
-Recommended for use with [ACF Options Page](https://github.com/marktimemedia/acf-theme-settings) and [Pink Spring Theme](https://github.com/marktimemedia/pink-spring)
+Recommended for use with [MTM Customizer](https://github.com/marktimemedia/mtm-customizer) and [Pink Spring Theme](https://github.com/marktimemedia/pink-spring)
 
-Works with most standard WordPress themes.
+Works with most standard WordPress themes. Includes jQuery Flexslider (with option to not enqueue script if you already have it elsewhere)
 
-### Custom Blocks (Flexible Fields)
-1. Single Column Content with heading
-2. Dual Column Content with heading
-3. Content with Callout and heading
-4. Hero Image with text and call to action buttons
-5. Video/Embedded Media with text and call to action buttons
-6. Slider with text and links
-7. Feature Boxes (post content, latest post, or manual)
-8. Call to Action with heading, subheading, buttons
-8. Logo Feature with image/link repeater
-9. Widget Area
-10. Post List
-11. Post Grid
-12. Manual List
-13. Manual Grid
-14. Tabs
-15. Gallery (using WordPress Gallery)
-16. Multi-Buttons
+### Custom ACF Blocks
+1. Logo Feature with image/link repeater
+2. Widget Area
+3. Post List
+4. Post Grid
+5. Manual List
+6. Manual Grid
+7. Tabs
+
+### Custom Blocks with InnerBlocks (requires ACF 5.9+)
+1. Slider (Gallery) with InnerBlocks of heading, subheading, buttons
+2. Call to Action with InnerBlocks of heading, subheading, buttons
 
 ### Page Templates (block templates coming soon, once WordPress supports them)
 1. Custom Block Template (adds ability to hide or show the main page title)
