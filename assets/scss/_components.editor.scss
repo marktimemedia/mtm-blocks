@@ -1,0 +1,77 @@
+.acf-block-component .components-placeholder {
+  &.components-placeholder {
+    background-color: transparent;
+    border-color: #ccc;
+    box-shadow: none;
+    outline: 2px dotted #ccc;
+  }
+}
+.editor-styles-wrapper {
+  .acf-block-preview {
+    a {
+      pointer-events:none;
+    }
+  }
+  .acf-input {
+    ul {
+      margin: inherit;
+      padding: inherit;
+    }
+
+    .acf-radio-list {
+      li {
+        line-height: 33px;
+        label {
+          padding: .5em;
+          border: 1px solid #ddd;
+          visibility: hidden;
+
+          &:hover, &:focus {
+            background-color: #ddd;
+          }
+
+          &:first-of-type {
+            visibility: visible;
+          }
+        }
+
+        .selected {
+          background-color: #ddd;
+        }
+
+        input[type="radio"] {
+          display: inline-block;
+          visibility: visible;
+        }
+
+        input[type="text"] {
+          display: inline-block !important;
+        }
+      }
+    }
+
+    .mtm-tabs--content.current {
+      display: none !important;
+
+      &#tab-1 {
+        display: inherit !important;
+      }
+    }
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  ul.slides {
+    list-style: none;
+    margin-left: auto;
+    padding: 0;
+    li {
+      display: none;
+      &:first-of-type {
+        display: block;
+      }
+    }
+  }
+}
