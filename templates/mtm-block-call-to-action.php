@@ -12,13 +12,14 @@ $template = array(
 				'fontSize' => 'medium'
     ) ),
 		array( 'core/buttons', array(
-			'className' => 'mtm-cta-buttons'
+			'className' => 'mtm-cta-buttons',
+			'align' => $align,
 		), array(
 			array( 'core/button', array(
 	        'placeholder' => 'Click to learn more',
 					'backgroundColor' => 'neutral-white',
 					'textColor' => 'neutral-white',
-					'className' => 'is-style-outline'
+					'className' => 'is-style-outline ' . $size,
 	    ) ),
     ) )
 );

@@ -61,8 +61,8 @@
 			// video: false,                   //{NEW} Boolean: If using video in the slider, will prevent CSS3 3D Transforms to avoid graphical glitches
 
 			// // Primary Controls
-			// controlNav: fsControlNav,          //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage
-			// directionNav: fsDirectionNav,      //Boolean: Create navigation for previous/next navigation? (true/false)
+			controlNav: fsControlNav,          //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage
+			directionNav: fsDirectionNav,      //Boolean: Create navigation for previous/next navigation? (true/false)
 			// prevText: "Previous",           //String: Set the text for the "previous" directionNav item
 			// nextText: "Next",               //String: Set the text for the "next" directionNav item
 

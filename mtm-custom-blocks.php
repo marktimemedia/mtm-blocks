@@ -3,7 +3,7 @@
 	Plugin Name: ACF Custom Blocks
 	Description: Custom Blocks, Patterns, and Block Page Templates
 	Author: Marktime Media
-	Version: 1.0
+	Version: 1.0.2
 	Author URI: http://www.marktimemedia.com
  */
 
@@ -76,15 +76,19 @@ add_action( 'plugins_loaded', array( 'Mtm_Block_Templates', 'get_instance' ) );
 function mtm_mtm_fs_wp_scripts() {
 
 	$mtm_fs_options = get_option( 'mtm_fs_wp_options' );
-  wp_enqueue_script( 'flexslider-options', plugins_url( 'assets/js/flexslider-options.js', __FILE__) );
-	wp_localize_script( 'flexslider-options', 'fsOptions', $mtm_fs_options );
 
-	if( 'yes' == $mtm_fs_options['mtm_fs_wp_field_enqueue_flexslider'] ) {
-		wp_enqueue_script('flexslider', plugins_url( 'assets/js/min/jquery.flexslider-min.js', __FILE__), array( 'jquery' ) );
-	}
-	if( 'yes' == $mtm_fs_options['mtm_fs_wp_field_enqueue_css'] ) {
-		wp_enqueue_style('flexslider_css', plugins_url( 'assets/css/flexslider.css', __FILE__) );
-	}
+  if(has_block('acf/mtm-block-slider')){ // only load script when block is present
+
+  	if( 'yes' == $mtm_fs_options['mtm_fs_wp_field_enqueue_flexslider'] ) {
+  		wp_enqueue_script('flexslider', plugins_url( 'assets/js/min/jquery.flexslider-min.js', __FILE__), array( 'jquery' ), '', true );
+  	}
+  	if( 'yes' == $mtm_fs_options['mtm_fs_wp_field_enqueue_css'] ) {
+  		wp_enqueue_style('flexslider_css', plugins_url( 'assets/css/flexslider.css', __FILE__) );
+  	}
+
+    wp_enqueue_script( 'flexslider-options', plugins_url( 'assets/js/flexslider-options.js', __FILE__), array( 'jquery' ), '', true );
+  	wp_localize_script( 'flexslider-options', 'fsOptions', $mtm_fs_options );
+  }
 }
 add_action( 'wp_enqueue_scripts', 'mtm_mtm_fs_wp_scripts' );
 
