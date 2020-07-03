@@ -9,8 +9,13 @@
 .editor-styles-wrapper {
   .acf-block-preview {
     a {
-      pointer-events:none;
+      cursor: not-allowed;
+      pointer-events:none !important;
     }
+  }
+
+  .mtm-grid--image a, .mtm-list--image a {
+    display: block;
   }
   .acf-input {
     ul {

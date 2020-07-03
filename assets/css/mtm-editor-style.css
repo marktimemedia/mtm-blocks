@@ -5,7 +5,10 @@
   outline: 2px dotted #ccc; }
 
 .editor-styles-wrapper .acf-block-preview a {
-  pointer-events: none; }
+  cursor: not-allowed;
+  pointer-events: none !important; }
+.editor-styles-wrapper .mtm-grid--image a, .editor-styles-wrapper .mtm-list--image a {
+  display: block; }
 .editor-styles-wrapper .acf-input ul {
   margin: inherit;
   padding: inherit; }

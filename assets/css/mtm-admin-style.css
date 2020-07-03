@@ -45,12 +45,12 @@ div.mce-panel.mce-fullscreen {
 .acf-block-panel .acf-relationship .filters.-f3 .filter {
   width: 100%; }
 .acf-block-panel .acf-relationship .choices {
-  width: 100%; }
+  width: 100% !important; }
   .acf-block-panel .acf-relationship .choices .list {
     border-right: 0;
     border-bottom: 1px solid #dfdfdf; }
 .acf-block-panel .acf-relationship .values {
-  width: 100%; }
+  width: 100% !important; }
 .acf-block-panel .acf-gallery .acf-field .acf-input {
   vertical-align: middle; }
 .acf-block-panel .acf-gallery .acf-gallery-side, .acf-block-panel .acf-gallery .acf-gallery-side-inner {

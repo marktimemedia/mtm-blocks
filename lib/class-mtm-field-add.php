@@ -113,7 +113,7 @@ add_filter( 'block_categories', 'mtm_block_category', 10, 2);
 				 'category'          => 'custom-blocks',
 				 'icon'              => 'grid-view',
 				 'keywords'          => array( 'grid' ),
-				'mode' => 'auto',
+				'mode' => 'preview',
 		 ));
 
 		// Content Grid

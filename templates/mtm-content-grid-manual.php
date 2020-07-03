@@ -1,7 +1,7 @@
 <?php // Manual Grid
 global $mtm_grid_row_class;
 
-$url = mtm_output_url_override_sub( 'mtm_list_item_link' );
+$link = _get_sub_field('mtm_content_link');
 $image = _get_sub_field( 'mtm_list_item_image' );
 $file = _get_sub_field( 'mtm_list_item_file' ) ?>
 
@@ -12,15 +12,15 @@ $file = _get_sub_field( 'mtm_list_item_file' ) ?>
 			$thumb = $image['sizes'][ 'medium_large' ];
 			$alt = $image['alt']; ?>
 			<section class="mtm-grid--image">
-				<?php if( $url ): ?><a aria-hidden="true" tabindex="-1" href="<?php echo esc_url( $url ) ?>"><?php endif; ?>
+				<?php if( $link ): ?><a aria-hidden="true" tabindex="-1" href="<?php echo esc_url( $link['url'] ) ?>" target="<?php echo $link['target'];?>"><?php endif; ?>
 					<figure class="post--thumbnail mtm-post-thumbnail" style="background-image:url(<?php echo esc_url( $thumb ); ?>)"></figure>
-				<?php if( $url ): ?></a><?php endif; ?>
+				<?php if( $link ): ?></a><?php endif; ?>
 			</section>
 		<?php endif; ?>
 		<h3>
-			<?php if( $url ): ?><a href="<?php echo esc_url( $url ) ?>"><?php endif; ?>
+			<?php if( $link ): ?><a href="<?php echo esc_url( $link['url'] ) ?>" target="<?php echo $link['target'];?>"><?php endif; ?>
 				<?php the_sub_field( 'mtm_list_item_heading' ); ?>
-			<?php if( $url ): ?></a><?php endif; ?>
+			<?php if( $link ): ?></a><?php endif; ?>
 		</h3>
 		<p><?php the_sub_field( 'mtm_list_item_content' ); ?></p>
 		<?php if( $file ): mtm_output_file_link( $file ); endif;?>

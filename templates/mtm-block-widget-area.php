@@ -7,7 +7,7 @@ $widgetname = _get_field( 'mtm_select_widget_area' );
 <?php endif;
 
 if( _get_field( 'mtm_select_widget_area' ) ) : ?>
-	<div class="mtm-module--widget">
+	<div class="mtm-module--widget wp-block-columns">
 		<?php dynamic_sidebar( $widgetname ); ?>
 	</div>
 <?php endif; ?>

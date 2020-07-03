@@ -387,7 +387,7 @@ class Mtm_Block_Field_Definitions {
 							'mime_types' => '',
 						),
 						array(
-							'key' => 'field_57815a30d2d63innerblock',
+							'key' => 'field_57815a30d2d63block',
 							'label' => 'Logo Link',
 							'name' => 'mtm_content_link',
 							'type' => 'link',
@@ -1360,7 +1360,7 @@ class Mtm_Block_Field_Definitions {
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '',
+						'width' => 75,
 						'class' => '',
 						'id' => '',
 					),
@@ -1381,7 +1381,7 @@ class Mtm_Block_Field_Definitions {
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '',
+						'width' => 25,
 						'class' => '',
 						'id' => '',
 					),
@@ -1428,7 +1428,7 @@ class Mtm_Block_Field_Definitions {
 							'disabled' => 0,
 						),
 						array(
-							'key' => 'field_57815a30d2d63innerblock',
+							'key' => 'field_57815a30d2345block',
 							'label' => 'Content Link',
 							'name' => 'mtm_content_link',
 							'type' => 'link',
@@ -1436,7 +1436,7 @@ class Mtm_Block_Field_Definitions {
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
-								'width' => '',
+								'width' => 50,
 								'class' => '',
 								'id' => '',
 							),
@@ -1549,7 +1549,7 @@ class Mtm_Block_Field_Definitions {
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => 70,
+						'width' => 50,
 						'class' => '',
 						'id' => '',
 					),
@@ -1570,7 +1570,7 @@ class Mtm_Block_Field_Definitions {
 					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => 30,
+						'width' => 25,
 						'class' => '',
 						'id' => '',
 					),
@@ -1593,7 +1593,7 @@ class Mtm_Block_Field_Definitions {
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '',
+						'width' => 25,
 						'class' => '',
 						'id' => '',
 					),
@@ -1648,7 +1648,7 @@ class Mtm_Block_Field_Definitions {
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
-								'width' => '',
+								'width' => 50,
 								'class' => '',
 								'id' => '',
 							),

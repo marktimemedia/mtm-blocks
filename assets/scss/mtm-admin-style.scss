@@ -75,7 +75,7 @@ div.mce-panel.mce-fullscreen { // tinyMCE in Fullscreen mode
     }
 
     .choices {
-      width: 100%;
+      width: 100% !important;
       .list {
         border-right: 0;
         border-bottom: 1px solid #dfdfdf;
@@ -83,7 +83,7 @@ div.mce-panel.mce-fullscreen { // tinyMCE in Fullscreen mode
     }
 
     .values {
-      width: 100%;
+      width: 100% !important;
     }
   }
   // Gallery

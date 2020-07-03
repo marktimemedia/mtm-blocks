@@ -90,13 +90,5 @@ if( 'Pick From Taxonomy' == _get_field( 'mtm_list_archive_select' ) ) : // Taxon
 		endif; ?>
 	</div>
 
-<?php else : // Manual Source (repeater)
-	if( have_rows( 'mtm_add_list_item' ) ) : // Repeater ?>
-		<div class="mtm-module--list">
-			<?php while( have_rows( 'mtm_add_list_item' ) ): the_row(); // Loop through each itemm
-				mtm_get_block_part( 'mtm-content', 'list-module' );
-			endwhile; ?>
-		</div>
-	 <?php endif; // End List
-endif; // End Pick from Source?>
+<? endif; // End Pick from Source?>
 </div>
