@@ -38,22 +38,28 @@
 
 // Slider
 .mtm_module_slider {
+	background-color: rgba(0,0,0,0.2);
 	position: relative;
+	min-height: 200px;
 }
 .mtm-module--slider {
+	margin-bottom: 40px;
 	&.no-nav {
 		margin-bottom: 0;
-
-		.flex-control-nav {
-			display: none;
-		}
 	}
 
 	&.no-arrows {
-		.flex-direction-nav {
-			display: none;
-		}
 	}
+}
+
+.slides {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.slide {
+	list-style: none;
+	margin: 0;
 }
 
 .mtm-module--slider-slide {
@@ -77,11 +83,8 @@
 			padding: 0 2em;
 		}
 
-		.flex-control-nav {
-			z-index: 2;
-		}
-
 		.mtm-module--main-text {
+			background-color: rgba(0,0,0,0.2);
 		  display: flex;
 		  flex-direction: column;
 		  height: 100%;

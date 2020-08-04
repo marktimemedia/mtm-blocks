@@ -13,8 +13,8 @@
  * @link       https://github.com/TGMPA/TGM-Plugin-Activation
  */
 
-if( !function_exists( 'mtm_register_required_plugins' ) ) {
-	
+if ( ! function_exists( 'mtm_register_required_plugins' ) ) {
+
 	add_action( 'tgmpa_register', 'mtm_register_required_plugins' );
 	/**
 	 * Register the required plugins for this theme.
@@ -34,45 +34,42 @@ if( !function_exists( 'mtm_register_required_plugins' ) ) {
 
 			// Include a plugin from an arbitrary external source in your theme.
 			array(
-				'name'         => 'Advanced Custom Fields Pro', // The plugin name.
-				'slug'         => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name).
-				'source'       => WP_PLUGIN_DIR . '/advanced-custom-fields-pro', // The plugin source.
-				'required'     => true, // If false, the plugin is only 'recommended' instead of required.
-				'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+				'name'             => 'Advanced Custom Fields Pro', // The plugin name.
+				'slug'             => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name).
+				'source'           => WP_PLUGIN_DIR . '/advanced-custom-fields-pro', // The plugin source.
+				'required'         => true, // If false, the plugin is only 'recommended' instead of required.
+				'force_activation' => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 				//'external_url' => 'http://www.advancedcustomfields.com/pro/', // If set, overrides default API URL and points to an external URL.
 			),
 
 			// Include a plugin from the WordPress Plugin Repository.
 			array(
-				'name'      => 'Advanced Custom Fields: Widget Area Field',
-				'slug'      => 'advanced-custom-fields-widget-area-field',
-				'required'  => true, // If false, the plugin is only 'recommended' instead of required.
-				'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+				'name'             => 'Advanced Custom Fields: Widget Area Field',
+				'slug'             => 'advanced-custom-fields-widget-area-field',
+				'required'         => true, // If false, the plugin is only 'recommended' instead of required.
+				'force_activation' => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			),
 
 			// Include a plugin from a GitHub repository in your theme.
 			// This presumes that the plugin code is based in the root of the GitHub repository
 			// and not in a subdirectory ('/src') of the repository.
 			array(
-				'name'      => 'ACF Taxonomy Chooser',
-				'slug'      => 'acf-taxonomy-chooser',
-				'source'    => 'https://github.com/marktimemedia/acf-term-and-taxonomy-chooser/archive/master.zip',
-				'required'     => true, // If false, the plugin is only 'recommended' instead of required.
-				'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-				'external_url' => 'https://github.com/marktimemedia/acf-term-and-taxonomy-chooser', // If set, overrides default API URL and points to an external URL.
+				'name'             => 'ACF Taxonomy Chooser',
+				'slug'             => 'acf-taxonomy-chooser',
+				'source'           => 'https://github.com/marktimemedia/acf-term-and-taxonomy-chooser/archive/master.zip',
+				'required'         => true, // If false, the plugin is only 'recommended' instead of required.
+				'force_activation' => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+				'external_url'     => 'https://github.com/marktimemedia/acf-term-and-taxonomy-chooser', // If set, overrides default API URL and points to an external URL.
 			),
 
 			array(
-				'name'      => 'ACF Post Type Selector',
-				'slug'      => 'acf-post-type-selector',
-				'source'    => 'https://github.com/TimPerry/acf-post-type-selector/archive/master.zip',
-				'required'     => true, // If false, the plugin is only 'recommended' instead of required.
-				'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-				'external_url' => 'https://github.com/TimPerry/acf-post-type-selector', // If set, overrides default API URL and points to an external URL.
+				'name'             => 'ACF Post Type Selector',
+				'slug'             => 'acf-post-type-selector',
+				'source'           => 'https://github.com/TimPerry/acf-post-type-selector/archive/master.zip',
+				'required'         => true, // If false, the plugin is only 'recommended' instead of required.
+				'force_activation' => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+				'external_url'     => 'https://github.com/TimPerry/acf-post-type-selector', // If set, overrides default API URL and points to an external URL.
 			),
-
-
-
 		);
 
 		/*
@@ -96,18 +93,17 @@ if( !function_exists( 'mtm_register_required_plugins' ) ) {
 			'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 			'message'      => '',                      // Message to output right before the plugins table.
 
-
 			'strings'      => array(
-				'page_title'                      => __( 'Install Required Plugins', 'theme-slug' ),
-				'menu_title'                      => __( 'Install Plugins', 'theme-slug' ),
-				'installing'                      => __( 'Installing Plugin: %s', 'theme-slug' ), // %s = plugin name.
-				'oops'                            => __( 'Something went wrong with the plugin API.', 'theme-slug' ),
-				'notice_can_install_required'     => _n_noop(
+				'page_title'                     => __( 'Install Required Plugins', 'theme-slug' ),
+				'menu_title'                     => __( 'Install Plugins', 'theme-slug' ),
+				'installing'                     => __( 'Installing Plugin: %s', 'theme-slug' ), // %s = plugin name.
+				'oops'                           => __( 'Something went wrong with the plugin API.', 'theme-slug' ),
+				'notice_can_install_required'    => _n_noop(
 					'This plugin requires the following plugin: %1$s.',
 					'This plugin requires the following plugins: %1$s.',
 					'theme-slug'
 				), // %1$s = plugin name(s).
-				'notice_can_install_recommended'  => _n_noop(
+				'notice_can_install_recommended' => _n_noop(
 					'This plugin recommends the following plugin: %1$s.',
 					'This plugin recommends the following plugins: %1$s.',
 					'theme-slug'

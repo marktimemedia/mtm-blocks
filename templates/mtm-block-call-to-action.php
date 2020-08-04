@@ -1,27 +1,40 @@
 <?php // Module: Call To Action
-$align = _get_field( 'mtm_button_alignment' ) ? : 'default';
-$size = _get_field( 'mtm_button_size' ) ? : 'default';
+$align    = _get_field( 'mtm_button_alignment' ) ? _get_field( 'mtm_button_alignment' ) : 'default';
+$size     = _get_field( 'mtm_button_size' ) ? _get_field( 'mtm_button_size' ) : 'default';
 $template = array(
-		array( 'core/heading', array(
-				'placeholder' => 'Call to action heading',
-				'textColor' => 'neutral-white'
-		) ),
-		array( 'core/paragraph', array(
-        'placeholder' => 'Call to action subheading',
-				'textColor' => 'neutral-lightest',
-				'fontSize' => 'medium'
-    ) ),
-		array( 'core/buttons', array(
+	array(
+		'core/heading',
+		array(
+			'placeholder' => 'Call to action heading',
+			'textColor'   => 'neutral-white',
+		),
+	),
+	array(
+		'core/paragraph',
+		array(
+			'placeholder' => 'Call to action subheading',
+			'textColor'   => 'neutral-lightest',
+			'fontSize'    => 'medium',
+		),
+	),
+	array(
+		'core/buttons',
+		array(
 			'className' => 'mtm-cta-buttons',
-			'align' => $align,
-		), array(
-			array( 'core/button', array(
-	        'placeholder' => 'Click to learn more',
+			'align'     => $align,
+		),
+		array(
+			array(
+				'core/button',
+				array(
+					'placeholder'     => 'Click to learn more',
 					'backgroundColor' => 'neutral-white',
-					'textColor' => 'neutral-white',
-					'className' => 'is-style-outline ' . $size,
-	    ) ),
-    ) )
+					'textColor'       => 'neutral-white',
+					'className'       => 'is-style-outline ' . $size,
+				),
+			),
+		),
+	),
 );
 ?>
 <div class="content--inner">

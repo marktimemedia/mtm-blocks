@@ -78,7 +78,7 @@ if ( ! class_exists( 'Gamajo_Block_Template_Loader' ) ) {
 		 *
 		 * @var array
 		 */
-		private $template_data_var_names = array('data');
+		private $template_data_var_names = array( 'data' );
 		/**
 		 * Clean up template data.
 		 *
@@ -127,7 +127,7 @@ if ( ! class_exists( 'Gamajo_Block_Template_Loader' ) ) {
 			global $wp_query;
 			$wp_query->query_vars[ $var_name ] = (object) $data;
 			// Add $var_name to custom variable store if not default value
-			if( $var_name !== 'data' ) {
+			if ( 'data' !== $var_name ) {
 				$this->template_data_var_names[] = $var_name;
 			}
 			return $this;
@@ -147,8 +147,8 @@ if ( ! class_exists( 'Gamajo_Block_Template_Loader' ) ) {
 			$custom_var_names = array_unique( $this->template_data_var_names );
 			// Remove each custom data reference from $wp_query
 			foreach ( $custom_var_names as $var ) {
-				if ( isset( $wp_query->query_vars[$var] ) ) {
-					unset( $wp_query->query_vars[$var] );
+				if ( isset( $wp_query->query_vars[ $var ] ) ) {
+					unset( $wp_query->query_vars[ $var ] );
 				}
 			}
 			return $this;
@@ -203,8 +203,8 @@ if ( ! class_exists( 'Gamajo_Block_Template_Loader' ) ) {
 			// Use $template_names as a cache key - either first element of array or the variable itself if it's a string
 			$cache_key = is_array( $template_names ) ? $template_names[0] : $template_names;
 			// If the key is in the cache array, we've already located this file.
-			if ( isset( $this->template_path_cache[$cache_key] ) ) {
-				$located = $this->template_path_cache[$cache_key];
+			if ( isset( $this->template_path_cache[ $cache_key ] ) ) {
+				$located = $this->template_path_cache[ $cache_key ];
 			} else {
 				// No file found yet.
 				$located = false;
@@ -220,7 +220,7 @@ if ( ! class_exists( 'Gamajo_Block_Template_Loader' ) ) {
 						if ( file_exists( $template_path . $template_name ) ) {
 							$located = $template_path . $template_name;
 							// Store the template path in the cache
-							$this->template_path_cache[$cache_key] = $located;
+							$this->template_path_cache[ $cache_key ] = $located;
 							break 2;
 						}
 					}
@@ -244,7 +244,7 @@ if ( ! class_exists( 'Gamajo_Block_Template_Loader' ) ) {
 		 */
 		protected function get_template_paths() {
 			$theme_directory = trailingslashit( $this->theme_template_directory );
-			$file_paths = array(
+			$file_paths      = array(
 				10  => trailingslashit( get_template_directory() ) . $theme_directory,
 				100 => $this->get_templates_dir(),
 			);

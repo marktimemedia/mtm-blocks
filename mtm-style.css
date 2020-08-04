@@ -426,14 +426,23 @@
   margin-top: 1em; }
 
 .mtm_module_slider {
-  position: relative; }
+  background-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  min-height: 200px; }
 
-.mtm-module--slider.no-nav {
-  margin-bottom: 0; }
-  .mtm-module--slider.no-nav .flex-control-nav {
-    display: none; }
-.mtm-module--slider.no-arrows .flex-direction-nav {
-  display: none; }
+.mtm-module--slider {
+  margin-bottom: 40px; }
+  .mtm-module--slider.no-nav {
+    margin-bottom: 0; }
+
+.slides {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.slide {
+  list-style: none;
+  margin: 0; }
 
 .mtm-module--slider-slide {
   background-size: cover;
@@ -451,10 +460,8 @@
 .mtm-module--main-text {
   padding: 0 2em; }
 
-.flex-control-nav {
-  z-index: 2; }
-
 .mtm-module--main-text {
+  background-color: rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   height: 100%;

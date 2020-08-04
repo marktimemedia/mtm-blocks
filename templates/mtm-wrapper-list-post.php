@@ -1,14 +1,15 @@
 <?php // Post List Wrapper
-$anchor = _get_field( 'mtm_list_title' ) ? sanitize_title_with_dashes( _get_field( 'mtm_list_title' ) ) : '' ; // title to anchor tag
-$className = 'mtm_module_listgrid_posts '. mtm_color_picker_class( 'mtm_color_picker_background', false, true );
-if( !empty($block['className']) ) {
-   $className .= ' ' . $block['className'];
+$anchor     = _get_field( 'mtm_list_title' ) ? sanitize_title_with_dashes( _get_field( 'mtm_list_title' ) ) : ''; // title to anchor tag
+$class_name = 'mtm_module_listgrid_posts ' . mtm_color_picker_class( 'mtm_color_picker_background', false, true );
+
+if ( ! empty( $block['className'] ) ) {
+	$class_name .= ' ' . $block['className'];
 }
-if( !empty($block['align']) ) {
-   $className .= ' align' . $block['align'];
+if ( ! empty( $block['align'] ) ) {
+	$class_name .= ' align' . $block['align'];
 }
 ?>
 
-<div class="<?php echo esc_attr($className); ?>" id="<?php echo( esc_html( $anchor ) ); ?>" style="background-color:<?php the_field('mtm_color_picker_background'); ?>">
-  <?php mtm_get_block_part( 'mtm-block', 'list-logic' ); ?>
+<div class="<?php echo esc_attr( $class_name ); ?>" id="<?php echo( esc_html( $anchor ) ); ?>" style="background-color:<?php the_field( 'mtm_color_picker_background' ); ?>">
+	<?php mtm_get_block_part( 'mtm-block', 'list-logic' ); ?>
 </div>

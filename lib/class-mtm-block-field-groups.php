@@ -17,9 +17,9 @@ class Mtm_Block_Field_Groups extends Mtm_Block_Field_Definitions {
 	*/
 	public static $arr_location = array(
 		array(
-			'param' => 'blocktemplates',
+			'param'    => 'blocktemplates',
 			'operator' => '==',
-			'value' => '../templates/template-single-scroll.php',
+			'value'    => '../templates/template-single-scroll.php',
 		),
 	);
 
@@ -39,31 +39,38 @@ class Mtm_Block_Field_Groups extends Mtm_Block_Field_Definitions {
 	*/
 	public function mtm_template_block_single_scroll( $label = null, array $location = null, $key = null ) {
 
-		if( is_null( $label ) ) { $label = self::$str_label; }
-		if( is_null( $location ) ) { $location = self::$arr_location; }
-		if( is_null( $key ) ) { $key = self::$str_key; }
+		if ( is_null( $label ) ) {
+			$label = self::$str_label;
+		}
+		if ( is_null( $location ) ) {
+			$location = self::$arr_location;
+		}
+		if ( is_null( $key ) ) {
+			$key = self::$str_key;
+		}
 
-		return apply_filters( 'mtm_template_block_single_scroll_filter', array(
-			'key' => $key,
-			'title' => $label,
-			'fields' => array(
+		return apply_filters(
+			'mtm_template_block_single_scroll_filter',
+			array(
+				'key'                   => $key,
+				'title'                 => $label,
+				'fields'                => array(
 					$this->mtm_block_show_page_title(),
 					$this->mtm_enable_jump_button(),
 					$this->mtm_block_single_scroll_page_select(),
-			),
-			'location' => array( $location ),
-			'menu_order' => 0,
-			'position' => 'normal',
-			'style' => 'default',
-			'label_placement' => 'top',
-			'instruction_placement' => 'label',
-			'hide_on_screen' => '',
-			'active' => 1,
-			'description' => '',
-		));
+				),
+				'location'              => array( $location ),
+				'menu_order'            => 0,
+				'position'              => 'normal',
+				'style'                 => 'default',
+				'label_placement'       => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen'        => '',
+				'active'                => 1,
+				'description'           => '',
+			)
+		);
 	}
-
-
 
 } // END class
 

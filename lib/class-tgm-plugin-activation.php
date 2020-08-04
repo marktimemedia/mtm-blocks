@@ -1540,7 +1540,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 */
 		public function get_info_link( $slug ) {
 			if ( ! empty( $this->plugins[ $slug ]['external_url'] ) && preg_match( self::IS_URL_REGEX, $this->plugins[ $slug ]['external_url'] ) ) {
-				$link = sprintf(
+				$mtm_link = sprintf(
 					'<a href="%1$s" target="_blank">%2$s</a>',
 					esc_url( $this->plugins[ $slug ]['external_url'] ),
 					esc_html( $this->plugins[ $slug ]['name'] )
@@ -1557,13 +1557,13 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					self_admin_url( 'plugin-install.php' )
 				);
 
-				$link = sprintf(
+				$mtm_link = sprintf(
 					'<a href="%1$s" class="thickbox">%2$s</a>',
 					esc_url( $url ),
 					esc_html( $this->plugins[ $slug ]['name'] )
 				);
 			} else {
-				$link = esc_html( $this->plugins[ $slug ]['name'] ); // No hyperlink.
+				$mtm_link = esc_html( $this->plugins[ $slug ]['name'] ); // No hyperlink.
 			}
 
 			return $link;
