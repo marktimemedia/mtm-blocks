@@ -49,6 +49,15 @@
 	@include pinkmagic( $rowitems: 12, $padside: 3% );
 }
 
+.has-background-image, .cropped {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.cropped {
+    padding-bottom: 100%;
+}
 /* Layout General */
 .alignright,
 .alignleft,

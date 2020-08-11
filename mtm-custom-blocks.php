@@ -3,7 +3,7 @@
 	Plugin Name: ACF Custom Blocks
 	Description: Custom Blocks, Patterns, and Block Page Templates
 	Author: Marktime Media
-	Version: 1.1
+	Version: 1.1.2
 	Author URI: http://www.marktimemedia.com
  */
 
@@ -44,7 +44,7 @@ add_action( 'wp_enqueue_scripts', 'mtm_block_components_load_scripts' );
 function mtm_block_components_load_styles() {
 	wp_enqueue_style( 'mtm-style', plugins_url( 'mtm-style.css', __FILE__ ) );
 }
-if ( _get_field( 'mtm_block_enqueue_stylesheets', 'option' ) ) {
+if ( get_option( 'options_mtm_block_enqueue_stylesheets' ) ) {
 	add_action( 'wp_enqueue_scripts', 'mtm_block_components_load_styles' );
 }
 
@@ -52,7 +52,7 @@ if ( _get_field( 'mtm_block_enqueue_stylesheets', 'option' ) ) {
 function mtm_block_components_load_styles_in_editor() {
 	wp_enqueue_style( 'mtm-editor-style', plugins_url( 'mtm-style.css', __FILE__ ) ); // enqueue style sheet
 }
-if ( _get_field( 'mtm_block_enqueue_stylesheets', 'option' ) ) {
+if ( get_option( 'options_mtm_block_enqueue_stylesheets' ) ) {
 	add_action( 'enqueue_block_editor_assets', 'mtm_block_components_load_styles_in_editor', 10, 0 );
 }
 

@@ -17,7 +17,7 @@ $file     = _get_sub_field( 'mtm_list_item_file' ) ?>
 				<?php if ( $mtm_link ) : ?>
 					<a aria-hidden="true" tabindex="-1" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>">
 				<?php endif; ?>
-					<figure class="post--thumbnail mtm-post-thumbnail" style="background-image:url(<?php echo esc_url( $thumb ); ?>)"></figure>
+					<figure class="post--thumbnail mtm-post-thumbnail has-background-image cropped" style="background-image:url(<?php echo esc_url( $thumb ); ?>)"></figure>
 				<?php if ( $mtm_link ) : ?>
 					</a>
 				<?php endif; ?>

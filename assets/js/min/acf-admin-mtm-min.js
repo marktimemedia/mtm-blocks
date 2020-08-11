@@ -1,1 +1,0 @@
-!function($){return"yes"==$("input[value='News']:checked").val()?($(".mtm-homepage-type-field").css("background-color","red"),console.log("worked")):($(".mtm-homepage-type-field").css("background-color","green"),console.log("other")),!1}(jQuery);

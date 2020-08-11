@@ -77,7 +77,7 @@ function register_acf_block_types() {
 	$lipsum_color     = '';
 	$lipsum_image     = '';
 	$lipsum_sentence  = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu lacus ipsum. ';
-	$lipsum_paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu lacus ipsum. Aliquam lacinia metus vel tincidunt suscipit. Vivamus ullamcorper nec quam commodo eleifend. Nulla vitae urna id mauris ornare tempus in et turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce porta elit orci, id posuere enim fermentum ut.'
+	$lipsum_paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu lacus ipsum. Aliquam lacinia metus vel tincidunt suscipit. Vivamus ullamcorper nec quam commodo eleifend. Nulla vitae urna id mauris ornare tempus in et turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce porta elit orci, id posuere enim fermentum ut.';
 
 	// Manual List
 	acf_register_block_type(
@@ -262,15 +262,11 @@ if ( get_option( 'acf_version' ) >= 5.9 ) {
 
 if ( function_exists( 'acf_add_local_field_group' ) ) :
 
-	// $mtm_field_groups = new Mtm_Field_Groups();
-
-	// acf_add_local_field_group( $mtm_field_groups->mtm_content_modules() );
-
 	// Block Settings
 	acf_add_local_field_group(
 		array(
 			'key'                   => 'group_5b3f7572ce4f5BLOCK',
-			'title'                 => 'Custom Block Settings',
+			'title'                 => 'Global Block Settings',
 			'fields'                => array(
 				array(
 					'key'               => 'field_5b3f7580fae80BLOCK',
@@ -280,35 +276,35 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 					'instructions'      => 'Defaults to checked. If unchecked, you will need to include your own stylesheets in your theme.',
 					'required'          => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array(
+					'wrapper'           => array(
 						'width' => '',
 						'class' => '',
 						'id'    => '',
 					),
-					'message' => 'Enqueue the stylesheets from this plugin?',
-					'default_value' => 1,
-					'ui' => 0,
-					'ui_on_text' => '',
-					'ui_off_text' => '',
+					'message'           => 'Enqueue the stylesheets from this plugin?',
+					'default_value'     => 1,
+					'ui'                => 0,
+					'ui_on_text'        => '',
+					'ui_off_text'       => '',
 				),
 			),
-			'location' => array(
+			'location'              => array(
 				array(
 					array(
-						'param' => 'options_page',
+						'param'    => 'options_page',
 						'operator' => '==',
-						'value' => 'page-components-settings',
+						'value'    => 'page-components-settings',
 					),
 				),
 			),
-			'menu_order' => 0,
-			'position' => 'normal',
-			'style' => 'default',
-			'label_placement' => 'top',
+			'menu_order'            => 0,
+			'position'              => 'normal',
+			'style'                 => 'default',
+			'label_placement'       => 'top',
 			'instruction_placement' => 'label',
-			'hide_on_screen' => '',
-			'active' => 1,
-			'description' => '',
+			'hide_on_screen'        => '',
+			'active'                => 1,
+			'description'           => '',
 		)
 	);
 

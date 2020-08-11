@@ -58,7 +58,6 @@ if ( ! function_exists( 'mtm_plugin_options_page' ) ) {
 					'parent_slug' => 'options-general.php',
 				)
 			);
-
 		}
 	}
 }

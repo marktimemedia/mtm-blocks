@@ -5,7 +5,7 @@ global $mtm_grid_row_class;
 	<div class="mtm-grid--single-content">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<section class="mtm-grid--image">
-				<a aria-hidden="true" tabindex="-1" href="<?php the_permalink(); ?>"><figure class="post--thumbnail mtm-post-thumbnail" style="background-image:url(<?php the_post_thumbnail_url( 'medium_large' ); ?>)"></figure></a>
+				<a aria-hidden="true" tabindex="-1" href="<?php the_permalink(); ?>"><figure class="post--thumbnail mtm-post-thumbnail has-background-image cropped" style="background-image:url(<?php the_post_thumbnail_url( 'medium_large' ); ?>)"></figure></a>
 			</section>
 		<?php endif; ?>
 		<section class="mtm-grid--post-content">

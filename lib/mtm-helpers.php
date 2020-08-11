@@ -136,7 +136,7 @@ if ( ! function_exists( 'mtm_acf_taxonomy_path' ) ) {
 		$taxterm = get_term( $taxid );
 		$parent  = $taxterm->parent ? get_term( $taxterm->parent ) : false;
 		$path    = $parent ? $parent->slug . '/' . $taxterm->slug : $taxterm->slug;
-		return $path
+		return $path;
 	}
 }
 
@@ -487,11 +487,13 @@ if ( ! function_exists( 'mtm_color_picker_class' ) ) {
 			'mtm_block_colors_filter',
 			array(
 				// Change these to match your color class (gutenberg) and hex codes (acf)
-				'spring-color-1'   => '#de1e7e',
-				'spring-color-2'   => '#10aded',
-				'spring-color-3'   => '#10ca7e',
-				'spring-color-4'   => '#9155ed',
-				'spring-color-5'   => '#ff4500',
+				'brand-color-1'    => '#de1e7e',
+				'brand-color-2'    => '#10aded',
+				'brand-color-3'    => '#10ca7e',
+				'brand-color-4'    => '#9155ed',
+				'brand-color-5'    => '#ff4500',
+				'brand-links'      => '#de1e7e',
+				'brand-alert'      => '#E6135A',
 				'white'            => '#ffffff',
 				'neutral-lightest' => '#f6f6f6',
 				'neutral-light'    => '#e0e0e0',
