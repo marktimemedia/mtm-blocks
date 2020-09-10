@@ -3,7 +3,7 @@
 	Plugin Name: ACF Custom Blocks
 	Description: Custom Blocks, Patterns, and Block Page Templates
 	Author: Marktime Media
-	Version: 1.1.2
+	Version: 1.1.3
 	Author URI: http://www.marktimemedia.com
  */
 

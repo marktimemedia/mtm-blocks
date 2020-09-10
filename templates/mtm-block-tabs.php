@@ -12,6 +12,7 @@ $rows = _get_field( 'mtm_tab_repeater' );
 				</button>
 			<?php endforeach; ?>
 		</div>
+		<div class="mtm-tabs--content-container">
 		<?php $j = 1; ?>
 			<?php foreach ( $rows as $row ) : ?>
 				<button class="mtm-tabs--title mtm-tabs--title-accordion current" aria-selected="true" id ="tab-title-<?php echo esc_attr( $j ); ?>" data-tab="tab-<?php echo esc_attr( $j ); ?>" >
@@ -21,6 +22,7 @@ $rows = _get_field( 'mtm_tab_repeater' );
 					<?php echo wp_kses_post( $row['mtm_tab_content'] ); ?>
 				</div>
 			<?php endforeach; ?>
+		</div>
 	</div>
 <?php endif; // end have_rows ?>
 </div>

@@ -9,14 +9,15 @@
 
 		$('.mtm-tabs--title').click(function(){
 			var tab_id = $(this).attr('data-tab');
+			var $tab_group = $(this).parent().parent();
 
-			$('.mtm-tabs--title').removeClass('current');
-			$('.mtm-tabs--title').attr('aria-selected', "false");
-			$('.mtm-tabs--content').removeClass('current');
+			$tab_group.children().children('.mtm-tabs--title').removeClass('current');
+			$tab_group.children().children('.mtm-tabs--title').attr('aria-selected', "false");
+			$tab_group.children().children('.mtm-tabs--content').removeClass('current');
 
-			$('.mtm-tabs--title[data-tab="'+tab_id+'"]').addClass('current');
-			$('.mtm-tabs--title[data-tab="'+tab_id+'"]').attr('aria-selected', "true");
-			$("#"+tab_id).addClass('current');
+			$tab_group.children().children('.mtm-tabs--title[data-tab="'+tab_id+'"]').addClass('current');
+			$tab_group.children().children('.mtm-tabs--title[data-tab="'+tab_id+'"]').attr('aria-selected', "true");
+			$tab_group.children().children("#"+tab_id).addClass('current');
 		});
 
 	});
