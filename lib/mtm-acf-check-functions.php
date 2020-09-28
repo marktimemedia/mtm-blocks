@@ -43,7 +43,7 @@ if ( ! function_exists( '_get_field' ) ) {
  */
 if ( ! function_exists( '_the_field' ) ) {
 	function _the_field( $key, $id = false, $default = '' ) {
-		echo _get_field( $key, $id, $default );
+		echo _get_field( $key, $id, $default ); //phpcs:ignore
 	}
 }
 /**
@@ -70,7 +70,7 @@ if ( ! function_exists( '_get_sub_field' ) ) {
  */
 if ( ! function_exists( '_the_sub_field' ) ) {
 	function _the_sub_field( $key, $default = '' ) {
-		echo _get_sub_field( $key, $default );
+		echo _get_sub_field( $key, $default ); //phpcs:ignore
 	}
 }
 /**
