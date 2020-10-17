@@ -67,7 +67,7 @@ $gutter         = _get_field( 'mtm_carousel_gutter' ) ? _get_field( 'mtm_carouse
 $slideby        = 1;
 $autowidth      = 'false';
 $mousedrag      = 'false';
-$responsive     = ( $items >= 1 ) ? '{ "500": { "items": 2 }, "800": { "items": ' . $items . ' } }' : 'false';
+$responsive     = ( $items > 1 ) ? '{ "500": { "items": 2 }, "800": { "items": ' . $items . ' } }' : 'false';
 
 // inline script
 wp_add_inline_script(
@@ -111,7 +111,7 @@ wp_add_inline_script(
 ?>
 <section class="slider-container">
 	<section class="mtm-module--slider <?php echo esc_attr( $slider_class ); ?>">
-		<ul class="slides">
+		<ul class="slides" style="min-height:<?php echo esc_attr( $slider_min_height ); ?>; max-height:<?php echo esc_attr( $slider_max_height ); ?>;">
 		<?php if ( $slider_gallery ) : ?>
 			<?php foreach ( $slider_gallery as $image ) : ?>
 				<li class="mtm-module--slider-slide slide" style="background-image:url('<?php echo esc_url( $image['url'] ); ?>'); min-height:<?php echo esc_attr( $slider_min_height ); ?>; max-height:<?php echo esc_attr( $slider_max_height ); ?>;">

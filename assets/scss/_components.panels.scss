@@ -56,6 +56,16 @@
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
+	height: 800px;
+
+	@media only screen and (max-width: $med-bp) {
+		height: 200px;
+	}
+
+	@media only screen and (min-width: $med-bp) {
+		height: 800px;
+	}
 }
 .slide {
 	list-style: none;
@@ -114,16 +124,14 @@
 	}
 
 
-	// CTA
-		.mtm_module_call_to_action {
-			padding: $sm-pad;
-			background: #eee;
-			overflow: auto;
+// CTA
 
-			.alignright, .alignleft, .aligncenter {
-				margin-bottom: 0;
-			}
-		}
+.mtm-module--cta {
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
 
 /* List Rules */
 

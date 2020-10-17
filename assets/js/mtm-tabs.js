@@ -8,6 +8,7 @@
 		$('.mtm-tabs--title[data-tab!="tab-1"]').attr('aria-selected', "false");
 
 		$('.mtm-tabs--title').click(function(){
+			console.log('click');
 			var tab_id = $(this).attr('data-tab');
 			var $tab_group = $(this).parent().parent();
 
