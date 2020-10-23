@@ -15,6 +15,7 @@ $bg_hex            = _get_field( 'mtm_color_picker_background' ) ? _get_field( '
 $bg_rgb            = $bg_hex ? implode( ', ', hex_to_rgb( $bg_hex ) ) : '';
 $bg_opacity        = _get_field( 'mtm_opacity' ) ? _get_field( 'mtm_opacity' ) : '0.5';
 $bg_color          = $bg_hex ? 'rgba(' . $bg_rgb . ', ' . $bg_opacity . ')' : '';
+$bg_color_mobile   = $bg_hex;
 
 // innerBlocks template
 $template = array(
@@ -85,7 +86,7 @@ wp_add_inline_script(
 				speed: 500,
 				controls: " . $directionnav . ",
 				controlsPosition: '" . $controlpos . "',
-				controlsText: ['⇦', '⇨'],
+				controlsText: ['Prev', 'Next'],
 				nav: " . $controlnav . ",
 				navPosition: '" . $controlpos . "',
 				navAsThumbnails: false,
@@ -119,7 +120,7 @@ wp_add_inline_script(
 			<?php endforeach; ?>
 		<?php endif; ?>
 		</ul>
-		<section class="mtm-module--main-text" style="background-color: <?php echo esc_attr( $bg_color ); ?>">
+		<section class="mtm-module--main-text" style="background-image: linear-gradient(<?php echo $bg_hex; ?>, <?php echo $bg_hex; ?>); background-color: <?php echo esc_attr( $bg_color ); ?>">
 			<div>
 				<InnerBlocks template="<?php echo esc_attr( wp_json_encode( $template ) ); ?>" templateLock="insert" />
 			</div>

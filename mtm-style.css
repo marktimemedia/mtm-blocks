@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 01. SETTINGS */
 /* 02. TOOLS */
 * {
@@ -434,7 +435,6 @@
   margin-top: 1em; }
 
 .mtm_module_slider {
-  background-color: rgba(0, 0, 0, 0.2);
   position: relative;
   min-height: 200px; }
 
@@ -442,8 +442,31 @@
   margin-bottom: 40px; }
   .mtm-module--slider.no-nav {
     margin-bottom: 0; }
+  .mtm-module--slider button[data-action], .mtm-module--slider button[data-controls] {
+    opacity: 0.7; }
+    .mtm-module--slider button[data-action]:hover, .mtm-module--slider button[data-action]:focus, .mtm-module--slider button[data-controls]:hover, .mtm-module--slider button[data-controls]:focus {
+      opacity: 1; }
+  .mtm-module--slider .tns-controls button {
+    border-radius: 0 !important;
+    height: 40px;
+    width: 40px;
+    padding: 0 !important;
+    position: relative;
+    overflow: hidden; }
+    .mtm-module--slider .tns-controls button:before {
+      display: block;
+      content: '';
+      height: 40px;
+      width: 40px;
+      padding: 10px;
+      bottom: 0; }
+    .mtm-module--slider .tns-controls button[data-controls='prev']:before {
+      content: '◀'; }
+    .mtm-module--slider .tns-controls button[data-controls='next']:before {
+      content: '▶'; }
 
 .slides {
+  background-color: rgba(0, 0, 0, 0.2);
   list-style: none;
   padding: 0;
   margin: 0;
@@ -477,16 +500,19 @@
   padding: 0 2em; }
 
 .mtm-module--main-text {
-  background-color: rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  padding: 1em;
   position: relative;
   z-index: 2; }
+  @media only screen and (max-width: 45em) {
+    .mtm-module--main-text {
+      padding: 3em 1em 1em 1em;
+      background-color: inherit !important; } }
   @media only screen and (min-width: 45em) {
     .mtm-module--main-text {
+      background-image: none !important;
       position: absolute;
       top: 0;
       padding: 2em; } }
