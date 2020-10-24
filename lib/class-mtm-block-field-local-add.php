@@ -235,7 +235,6 @@ function register_acf_innerblock_types() {
 			),
 			'enqueue_assets'  => function() {
 				wp_enqueue_style( 'tinyslider_css', plugins_url( 'assets/css/tiny-slider.css', dirname( __FILE__ ) ), '', 1 );
-				wp_enqueue_script( 'tinyslider', plugins_url( 'assets/js/min/tiny-slider-min.js', dirname( __FILE__ ) ), array( 'jquery' ), 1, true );
 			},
 		)
 	);
