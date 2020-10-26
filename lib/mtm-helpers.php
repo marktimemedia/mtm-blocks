@@ -45,7 +45,7 @@ if ( ! function_exists( 'mtm_page_component_post_query' ) ) {
 				'orderby'        => $orderby,
 				'order'          => $order,
 				'post__not_in'   => get_option( $notin ),
-			),
+			)
 		);
 	}
 }

@@ -17,7 +17,7 @@ $content_size = '-full';
 
 		<section class="mtm-list--image">
 			<?php if ( $mtm_link ) : ?>
-				<a aria-hidden="true" tabindex="-1" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>">
+				<a aria-hidden="true" tabindex="-1" href="<?php echo esc_url( $mtm_link['url'] ); ?>" target="<?php echo esc_attr( $mtm_link['target'] ); ?>">
 			<?php endif; ?>
 				<figure class="post--thumbnail mtm-post-thumbnail has-background-image cropped" style="background-image:url(<?php echo esc_url( $thumb ); ?>)"></figure>
 			<?php if ( $mtm_link ) : ?>
@@ -30,7 +30,7 @@ $content_size = '-full';
 	<section class="mtm-list--post-content<?php echo esc_attr( $content_size ); ?>">
 		<h4>
 			<?php if ( $mtm_link ) : ?>
-				<a href="<?php echo esc_url( $link['url'] ); ?>">
+				<a href="<?php echo esc_url( $mtm_link['url'] ); ?>">
 			<?php endif; ?>
 				<?php the_sub_field( 'mtm_list_item_heading' ); ?>
 			<?php if ( $mtm_link ) : ?>
