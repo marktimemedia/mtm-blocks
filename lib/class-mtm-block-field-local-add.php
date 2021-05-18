@@ -40,6 +40,7 @@ class Mtm_Block_Field_Local_Add extends Mtm_Block_Field_Groups {
 
 			acf_add_local_field_group( $this->mtm_innerblock_slider() );
 			acf_add_local_field_group( $this->mtm_innerblock_call_to_action() );
+			acf_add_local_field_group( $this->mtm_innerblock_content_callout() );
 
 			acf_add_local_field_group( $this->mtm_template_block_single_scroll() );
 			acf_add_local_field_group( $this->mtm_enable_jump_button() );
@@ -208,6 +209,25 @@ function register_acf_innerblock_types() {
 			'category'        => 'custom-blocks',
 			'icon'            => 'welcome-view-site',
 			'keywords'        => array( 'call to action' ),
+			'mode'            => 'preview',
+			'supports'        => array(
+				'align'              => true,
+				'mode'               => false,
+				'__experimental_jsx' => true,
+			),
+		)
+	);
+
+	// Call To Action
+	acf_register_block_type(
+		array(
+			'name'            => 'mtm_block_content_callout',
+			'title'           => __( 'Content + Callout Block' ),
+			'description'     => __( 'Block content with callout section' ),
+			'render_template' => MTM_CBLOCK_PLUGIN_DIR . 'templates/mtm-wrapper-content-callout.php',
+			'category'        => 'custom-blocks',
+			'icon'            => 'welcome-view-site',
+			'keywords'        => array( 'content', 'callout' ),
 			'mode'            => 'preview',
 			'supports'        => array(
 				'align'              => true,

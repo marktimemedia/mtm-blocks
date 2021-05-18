@@ -347,6 +347,155 @@ class Mtm_Block_Field_Definitions {
 		);
 	}
 
+	// Content + Callout
+	public static function mtm_innerblock_content_callout( $label = 'Content + Callout' ) {
+		return apply_filters(
+			'mtm_innerblock_content_callout_filter',
+			array(
+				'key'                   => '56f58e7c5bc87block999',
+				'name'                  => 'mtm_block_content_callout',
+				'label'                 => $label,
+				'display'               => 'block',
+				'fields'                => array(
+					array(
+						'key'               => 'field_5dd188a07d1c9block99',
+						'label'             => 'Block Background Color',
+						'name'              => 'mtm_color_picker_background',
+						'type'              => 'color_picker',
+						'instructions'      => 'Background color for the entire block (optional)',
+						'required'          => 0,
+						'conditional_logic' => 0,
+						'wrapper'           => array(
+							'width' => '',
+							'class' => '',
+							'id'    => '',
+						),
+						'default_value'     => '',
+					),
+					array(
+						'key'               => 'field_5dd188a07d1c9block55',
+						'label'             => 'Callout Background Color',
+						'name'              => 'mtm_color_picker_callout',
+						'type'              => 'color_picker',
+						'instructions'      => 'Background color for the callout',
+						'required'          => 0,
+						'conditional_logic' => 0,
+						'wrapper'           => array(
+							'width' => '',
+							'class' => '',
+							'id'    => '',
+						),
+						'default_value'     => '#000',
+					),
+					array(
+						'key' => 'field_5ef1f8ae757bc34646block',
+						'label' => 'Opacity',
+						'name' => 'mtm_opacity_callout',
+						'type' => 'range',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => 0.5,
+						'min' => 0,
+						'max' => 1,
+						'step' => 0.1,
+						'prepend' => '',
+						'append' => '',
+					),
+					array(
+						'key' => 'field_60a3c16e94336block',
+						'label' => 'Alignment',
+						'name' => 'mtm_module_alignment',
+						'type' => 'select',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'choices' => array(
+							'right' => 'Right',
+							'left' => 'Left',
+						),
+						'default_value' => 'textleft',
+						'allow_null' => 0,
+						'multiple' => 0,
+						'ui' => 0,
+						'return_format' => 'value',
+						'ajax' => 0,
+						'placeholder' => '',
+					),
+					array(
+						'key'               => 'field_57a203ad154a0block',
+						'label'             => 'Callout Area Text',
+						'name'              => 'mtm_module_text_area_2',
+						'type'              => 'wysiwyg',
+						'instructions'      => 'This content will appear in the callout area and may have custom styles',
+						'required'          => '',
+						'conditional_logic' => '',
+						'wrapper' => array (
+							'width' => 50,
+							'class' => '',
+							'id'    => '',
+						),
+						'default_value'     => '',
+						'tabs'              => 'all',
+						'toolbar'           => 'full',
+						'media_upload'      => '',
+					),
+					array(
+						'key'               => 'field_5a00b31338751block',
+						'label'             => 'Callout Background Image',
+						'name'              => 'mtm_callout_background_image',
+						'type'              => 'image',
+						'instructions'      => 'Add an optional background image for the callout area. Any text added to the callout area will appear on top of the image.',
+						'required'          => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id'    => '',
+						),
+						'return_format'     => 'array',
+						'preview_size'      => 'thumbnail',
+						'library'           => 'all',
+						'min_width'         => '',
+						'min_height'        => '',
+						'min_size'          => '',
+						'max_width'         => '',
+						'max_height'        => '',
+						'max_size'          => '',
+						'mime_types'        => '',
+					),
+				),
+				'location'              => array(
+					array(
+						array(
+							'param'    => 'block',
+							'operator' => '==',
+							'value'    => 'acf/mtm-block-content-callout',
+						),
+					),
+				),
+				'menu_order'            => 0,
+				'position'              => 'side',
+				'style'                 => 'default',
+				'label_placement'       => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen'        => '',
+				'active'                => true,
+				'description'           => '',
+			)
+		);
+	}
+
 	// Logo/Graphic Showcase
 	public static function mtm_block_logo_showcase( $label = 'Logo/Graphic Showcase' ) {
 		return apply_filters( 'mtm_block_logo_showcase_filter', array(
