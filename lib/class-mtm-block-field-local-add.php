@@ -218,7 +218,7 @@ function register_acf_innerblock_types() {
 		)
 	);
 
-	// Call To Action
+	// Callout
 	acf_register_block_type(
 		array(
 			'name'            => 'mtm_block_content_callout',
@@ -226,7 +226,7 @@ function register_acf_innerblock_types() {
 			'description'     => __( 'Block content with callout section' ),
 			'render_template' => MTM_CBLOCK_PLUGIN_DIR . 'templates/mtm-wrapper-content-callout.php',
 			'category'        => 'custom-blocks',
-			'icon'            => 'welcome-view-site',
+			'icon'            => 'columns',
 			'keywords'        => array( 'content', 'callout' ),
 			'mode'            => 'preview',
 			'supports'        => array(

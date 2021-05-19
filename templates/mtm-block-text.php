@@ -10,6 +10,7 @@ $template   = array(
 		'core/heading',
 		array(
 			'placeholder' => 'Callout heading',
+			'level'       => 3,
 			'textColor'   => 'neutral-darkest',
 		),
 	),
@@ -18,7 +19,6 @@ $template   = array(
 		array(
 			'placeholder' => 'Callout subheading',
 			'textColor'   => 'neutral-darkest',
-			'fontSize'    => 'medium',
 		),
 	),
 	array(
