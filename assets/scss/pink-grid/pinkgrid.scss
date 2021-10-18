@@ -2,18 +2,17 @@
 	box-sizing: border-box; // All Pink Mixins need this in order to work :)
 }
 
-/** 
-*	PINK GRID
-*	Sass Width Percentage Generator
-*
-*	$align:			Vertical-align property 											Defaults to Top
-* 	$totalcols: 	Number of columns in your grid ( ex: 12 ) 							Defaults to $defaultcols
-*	$colspan: 		Number of columns your item spans ( ex: 3 / 12 ) 					Defaults to $defaultcols (100% width)
-*	$padside:		Percentage padding left/right of each item.							Defaults to $defaultpad
-*	$padtop:		Percentage padding above/below around each item. 					Defaults to 0
-*/
+// 	PINK GRID
+// 	Sass Width Percentage Generator
+//
+//	$align:			Vertical-align property 											Defaults to Top
+// 	$totalcols: 	Number of columns in your grid ( ex: 12 ) 							Defaults to $defaultcols
+//	$colspan: 		Number of columns your item spans ( ex: 3 / 12 ) 					Defaults to $defaultcols (100% width)
+//	$padside:		Percentage padding left/right of each item.							Defaults to $defaultpad
+//	$padtop:		Percentage padding above/below around each item. 					Defaults to 0
 
-$defaultcols: 12 !default; 
+
+$defaultcols: 12 !default;
 $defaultpad: 2% !default;
 $defaultmargin: -.275em !default; // Cancels out margin px issue with display:inline-block, may need to adjust based on body font;
 
@@ -31,24 +30,23 @@ $defaultmargin: -.275em !default; // Cancels out margin px issue with display:in
 
 		width:100%;
 	}
-		
+
 }
 
-/**
-*	PINK ROW
-*	Sass Row Item Generator
-*	Built in conjunction with Pink Grid
-*
-*	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
-*	$before:		Alternating row layouts: elements before this row 		Defaults to 0
-*	$after:			Alternating row layouts: elements after this row 		Defaults to 0
-*/
+// 	PINK ROW
+// 	Sass Row Item Generator
+//	Built in conjunction with Pink Grid
+//
+//	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
+//	$before:		Alternating row layouts: elements before this row 		Defaults to 0
+//	$after:			Alternating row layouts: elements after this row 		Defaults to 0
+
 
 @mixin pinkrow( $rowitems: 1, $before: 0, $after: 0 ) {
 
 	$rowtotal: $rowitems + $before + $after;
 	$rowend: $rowitems + $before;
-	$bef1: $before + 1;	
+	$bef1: $before + 1;
 
 	@if $rowitems <=1 { // Prevent weird broken values
 		padding-left: 0;
@@ -64,33 +62,34 @@ $defaultmargin: -.275em !default; // Cancels out margin px issue with display:in
 		&:nth-of-type( #{$rowtotal}n+#{$rowend} ){
 			padding-right:0;
 		}
+
 	}
+
 }
 
-/**
-*	PINK GRID ROW
-*	Generate evenly sized and evenly spaced row items
-*	Like Magic Grid but without the automatic media queries
-*
-*	$align:			Vertical-align property 								Defaults to Top
-*	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
-*	$before:		Alternating row layouts: elements before this row 		Defaults to 0
-*	$after:			Alternating row layouts: elements after this row 		Defaults to 0
-*	$padside:		Percentage padding left/right of each item.				Defaults to $defaultpad
-*	$padtop:		Percentage padding above/below around each item. 		Defaults to 0
-*/
+// PINK GRID ROW
+// Generate evenly sized and evenly spaced row items
+// Like Magic Grid but without the automatic media queries
+//
+//	$align:			Vertical-align property 								Defaults to Top
+//	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
+//	$before:		Alternating row layouts: elements before this row 		Defaults to 0
+//	$after:			Alternating row layouts: elements after this row 		Defaults to 0
+//	$padside:		Percentage padding left/right of each item.				Defaults to $defaultpad
+//	$padtop:		Percentage padding above/below around each item. 		Defaults to 0
+
 
 @mixin pinkgridrow( $align: top, $padtop: 0, $padside: $defaultpad, $rowitems: 1, $before: 0, $after: 0, $margin: $defaultmargin ) {
 
 	$itemwidth: ( ( 100% + $padside ) / $rowitems );
 	$lastwidth: ( $itemwidth - $padside );
 	$rowtotal: $rowitems + $before + $after;
-	$rowend: $rowitems + $before;	
+	$rowend: $rowitems + $before;
 
-	display:		inline-block;
-	margin-right: 	$margin; // Cancels out margin px issue with display:inline-block, may need to adjust based on body font;
+	display: inline-block;
+	margin-right: $margin; // Cancels out margin px issue with display:inline-block, may need to adjust based on body font;
 	vertical-align: $align;
-	padding: 		$padtop 0;
+	padding: $padtop 0;
 
 	@if $rowitems <=1 { // Prevent weird broken values
 		width:100%;
@@ -105,30 +104,31 @@ $defaultmargin: -.275em !default; // Cancels out margin px issue with display:in
 			padding-right:0;
 			width: $lastwidth;
 		}
+
 	}
+
 }
 
 
-/**
-* 	PINK MAGIC ROW
-* 	Complete responsive grid solution for equally sized items per row. 
-*	Includes a space to define your media query breakpoints (based on min-width)
-*
-*	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
-*	$padside:		Padding to the left/right of each item 					Defaults to $magicside
-*	$padtop:		Padding above/below around each item. 					Defaults to $magictop
-* 	$align 			Vertical-align property 								Defaults to Top
-*	$before:		Alternating row layouts: elements before this row 		Defaults to 0
-*	$after:			Alternating row layouts: elements after this row 		Defaults to 0
-*/
+// 	PINK MAGIC ROW
+// 	Complete responsive grid solution for equally sized items per row.
+//	Includes a space to define your media query breakpoints (based on min-width)
+//
+//	$rowitems:		Number of items per row ( ex. 4 )						Defaults to 1
+//	$padside:		Padding to the left/right of each item 					Defaults to $magicside
+//	$padtop:		Padding above/below around each item. 					Defaults to $magictop
+// 	$align 			Vertical-align property 								Defaults to Top
+//	$before:		Alternating row layouts: elements before this row 		Defaults to 0
+//	$after:			Alternating row layouts: elements after this row 		Defaults to 0
+
 
 $magicrow: 		4 !default; 		// Global default number of items per row
 $magictop: 		1em !default;		// Global default of top padding
-$magicside:		2% !default;		// Global default of side padding, in percentage
+$magicside:		3% !default;		// Global default of side padding, in percentage
 $magicalign:	top !default;		// Global default of vertical-align
 
 $tiny-bp: 		19em !default;		// Set your tiny breakpoint
-$sm-bp:			32em !default;		// Set your small breakpoint
+$sm-bp:			30em !default;		// Set your small breakpoint
 $med-bp:		45em !default;		// Set your medium breakpoint
 $lg-bp:			61em !default;		// Set your large breakpoint
 $xl-bp:			75em !default;		// Set your x-large breakpoint
@@ -143,11 +143,11 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 
 	display:		inline-block;
 	vertical-align:	$align;
-	margin-right: 	$margin; // Cancels out margin px issue with display:inline-block, may need to adjust based on body font;
+	margin-right: $margin; // Cancels out margin px issue with display:inline-block, may need to adjust based on body font;
 	width:			100%;
-	padding:		$padtop 0;	
+	padding:		$padtop 0;
 
-	@if $rowitems < 3 { // Less than 3 items per row
+	@if $rowitems <= 2 { // 2 items or less per row
 
 		@media only screen and ( min-width: $sm-bp ) {
 
@@ -165,8 +165,10 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					width: $lastwidth;
 				}
 			}
+
 		} // end $sm-bp
-	} // end 3 items or less per row
+
+	} // end 2 items or less per row
 
 	@else if $rowitems == 3 { // 3 items per row
 
@@ -174,8 +176,9 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 
 			$thisrow: 2; // intermediate row value, rounded up to nearest whole number
 			$itemwidth2: ( ( 100%  + $padside ) / $thisrow );
-			$lastwidth2: ( $itemwidth2 - $padside ); 	
-			$befrow: $before + $thisrow;	
+			$lastwidth2: ( $itemwidth2 - $padside );
+			$befrow: $before + $thisrow;
+			$rowtotal2: $thisrow + before + after;
 
 			width: $itemwidth2;
 			padding-right: $padside;
@@ -186,10 +189,11 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 
 			@if $before > 0 or $after > 0 {
 
-				&:nth-of-type( #{$rowtotal}n+#{$befrow} ), &:nth-of-type( #{$rowtotal}n+#{$rowend} ) {
+				&:nth-of-type( #{$rowtotal2}n+#{$befrow} ), &:nth-of-type( #{$rowtotal2}n+#{$rowend} ) {
 					padding-right:0;
 					width: $lastwidth2;
 				}
+
 			}
 
 			@else { // no before or after value
@@ -198,7 +202,9 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					padding-right:0;
 					width: $lastwidth2;
 				}
+
 			}
+
 		} // end $sm-bp
 
 		@media only screen and ( min-width: $med-bp ) {
@@ -216,18 +222,21 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					padding-right:0;
 					width: $lastwidth;
 				}
+
 			}
+
 		} // end $med-bp
+
 	} // end 3 items per row
 
 	@else if $rowitems > 3 and $rowitems <= 6 { // 4 to 6 items per row
 
-		@media only screen and ( min-width: $sm-bp ) and ( max-width: $lg-bp ) {
+		@media only screen and ( min-width: $tiny-bp ) and ( max-width: $med-bp ) {
 
 			$thisrow: ceil($rowitems/2); // intermediate row value, rounded up to nearest whole number
 			$itemwidth2: ( ( 100%  + $padside ) / $thisrow );
-			$lastwidth2: ( $itemwidth2 - $padside ); 	
-			$befrow: $before + $thisrow;	
+			$lastwidth2: ( $itemwidth2 - $padside );
+			$befrow: $before + $thisrow;
 
 			width: $itemwidth2;
 			padding-right: $padside;
@@ -242,18 +251,22 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					padding-right:0;
 					width: $lastwidth2;
 				}
+
 			}
 
 			@else { // no before or after value
+
 
 				&:nth-of-type( #{$thisrow}n+#{$thisrow} ){
 					padding-right:0;
 					width: $lastwidth2;
 				}
+
 			}
+
 		} // end $sm-bp
 
-		@media only screen and ( min-width: $lg-bp ) {
+		@media only screen and ( min-width: $med-bp ) {
 
 			width: $itemwidth;
 			padding-right: $padside;
@@ -268,17 +281,20 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					padding-right:0;
 					width: $lastwidth;
 				}
+
 			}
-		} // end $lg-bp
+
+		} // end $med-bp
+
 	} // end 4 to 6 items per row
 
-	@else if $rowitems > 6 and $rowitems <= 9 { // 7 to 9 items per row
+	@else if $rowitems > 6 and $rowitems <= 8 { // 7 to 8 items per row
 
-		@media only screen and ( min-width: $sm-bp ) and ( max-width: $med-bp ) {
+		@media only screen and ( max-width: $sm-bp ) {
 
-			$thisrow: 	ceil($rowitems/4); // intermediate row value, rounded up to nearest whole number
+			$thisrow: ceil($rowitems/4); // intermediate row value, rounded up to nearest whole number
 			$itemwidth2: ( ( 100%  + $padside ) / $thisrow );
-			$lastwidth2: ( $itemwidth2 - $padside ); 	
+			$lastwidth2: ( $itemwidth2 - $padside );
 			$befrow: $before + $thisrow;
 
 			width: $itemwidth2;
@@ -308,14 +324,16 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					padding-right:0;
 					width: $lastwidth2;
 				}
+
 			}
+
 		} // end $sm-bp
 
-		@media only screen and ( min-width: $med-bp ) and ( max-width: $lg-bp ) {
+		@media only screen and ( min-width: $sm-bp ) and ( max-width: $lg-bp ) {
 
 			$thisrow: ceil($rowitems/2); // intermediate row value, rounded up to nearest whole number
 			$itemwidth2: ( ( 100%  + $padside ) / $thisrow );
-			$lastwidth2: ( $itemwidth2 - $padside ); 	
+			$lastwidth2: ( $itemwidth2 - $padside );
 			$befrow: $before + $thisrow;
 
 			width: $itemwidth2;
@@ -331,6 +349,7 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					padding-right:0;
 					width: $lastwidth2;
 				}
+
 			}
 
 			@else { // no before or after value
@@ -339,7 +358,9 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					padding-right:0;
 					width: $lastwidth2;
 				}
+
 			}
+
 		} // end $med-bp
 
 		@media only screen and ( min-width: $lg-bp ) {
@@ -357,17 +378,119 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					padding-right:0;
 					width: $lastwidth;
 				}
+
 			}
+
 		} // end $lg-bp
+
 	} // end 7 to 10 items per row
 
-	@else if $rowitems > 9 { // 10+ items per row
+	@else if $rowitems >= 9 and $rowitems <= 10  { // 9-10 items per row
 
-		@media only screen and ( min-width: $sm-bp ) and ( max-width: $med-bp ) {
+		@media only screen and ( max-width: $sm-bp ) {
+
+			$thisrow: ceil($rowitems/3); // intermediate row value, rounded up to nearest whole number
+			$itemwidth2: ( ( 100%  + $padside ) / $thisrow );
+			$lastwidth2: ( $itemwidth2 - $padside );
+			$befrow: $before + $thisrow;
+
+			width: $itemwidth2;
+			padding-right: $padside;
+
+			@if $thisrow <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+			@if $before > 0 or $after > 0 {
+
+				@for $j from 1 through 2 {
+
+					$end:	$j * $thisrow;
+					$befend: $before + $end;
+
+					&:nth-of-type( #{$rowtotal}n+#{$befrow} ), &:nth-of-type( #{$rowtotal}n+#{$befrow} ), &:nth-of-type( #{$rowtotal}n+#{$befend} ){
+						padding-right:0;
+						width: $lastwidth2;
+					}
+				}
+			} // end before
+
+			@else { // no before or after value
+
+				&:nth-of-type( #{$thisrow}n+#{$thisrow} ){
+					padding-right:0;
+					width: $lastwidth2;
+				}
+
+			}
+
+		} // end $sm-bp
+
+		@media only screen and ( min-width: $sm-bp ) and ( max-width: $lg-bp ) {
+
+			$thisrow: ceil($rowitems/2); // intermediate row value, rounded up to nearest whole number
+			$itemwidth2: ( ( 100%  + $padside ) / $thisrow );
+			$lastwidth2: ( $itemwidth2 - $padside );
+			$befrow: $before + $thisrow;
+
+			width: $itemwidth2;
+			padding-right: $padside;
+
+			@if $rowitems <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+			@if $before > 0 or $after > 0 {
+
+				&:nth-of-type( #{$rowtotal}n+#{$befrow} ), &:nth-of-type( #{$rowtotal}n+#{$rowend} ) {
+					padding-right:0;
+					width: $lastwidth2;
+				}
+
+			}
+
+			@else { // no before or after value
+
+				&:nth-of-type( #{$thisrow}n+#{$thisrow} ){
+					padding-right:0;
+					width: $lastwidth2;
+				}
+
+			}
+
+		} // end $lg-bp
+
+
+
+		@media only screen and ( min-width: $lg-bp ) {
+
+			width: 	$itemwidth;
+			padding-right: $padside;
+
+			@if $rowitems <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+			@else { // all items
+
+				&:nth-of-type( #{$rowtotal}n+#{$rowend} ){
+					padding-right:0;
+					width: $lastwidth;
+				}
+
+			}
+
+		} // end $lg-bp
+
+	} // end 9-10 items per row
+
+	@else if $rowitems >= 11   { // 11+ items per row
+
+		@media only screen and ( max-width: $sm-bp ) {
 
 			$thisrow: ceil($rowitems/6); // intermediate row value, rounded up to nearest whole number
 			$itemwidth2: ( ( 100%  + $padside ) / $thisrow );
-			$lastwidth2: ( $itemwidth2 - $padside ); 	
+			$lastwidth2: ( $itemwidth2 - $padside );
 			$befrow: $before + $thisrow;
 
 			width: $itemwidth2;
@@ -397,14 +520,16 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					padding-right:0;
 					width: $lastwidth2;
 				}
+
 			}
+
 		} // end $sm-bp
 
-		@media only screen and ( min-width: $med-bp ) and ( max-width: $lg-bp ) {
+		@media only screen and ( min-width: $sm-bp ) and ( max-width: $med-bp ) {
 
 			$thisrow: ceil($rowitems/4); // intermediate row value, rounded up to nearest whole number
 			$itemwidth2: ( ( 100%  + $padside ) / $thisrow );
-			$lastwidth2: ( $itemwidth2 - $padside ); 	
+			$lastwidth2: ( $itemwidth2 - $padside );
 			$befrow: $before + $thisrow;
 
 			width: $itemwidth2;
@@ -413,11 +538,11 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 			@if $rowitems <=1 { // Prevent weird broken values
 				width:100%;
 			}
-			
+
 			@if $before > 0 or $after > 0 {
 
 				@for $j from 1 through 3 {
-					
+
 					$end:	$j * $thisrow;
 					$befend: $before + $end;
 
@@ -434,14 +559,16 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					padding-right:0;
 					width: $lastwidth2;
 				}
+
 			}
+
 		} // end $med-bp
 
-		@media only screen and ( min-width: $lg-bp ) and ( max-width: $xl-bp ) {
+		@media only screen and ( min-width: $med-bp ) and ( max-width: $lg-bp ) {
 
 			$thisrow: ceil($rowitems/2); // intermediate row value, rounded up to nearest whole number
 			$itemwidth2: ( ( 100%  + $padside ) / $thisrow );
-			$lastwidth2: ( $itemwidth2 - $padside ); 	
+			$lastwidth2: ( $itemwidth2 - $padside );
 			$befrow: $before + $thisrow;
 
 			width: $itemwidth2;
@@ -457,6 +584,7 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					padding-right:0;
 					width: $lastwidth2;
 				}
+
 			}
 
 			@else { // no before or after value
@@ -465,12 +593,14 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					padding-right:0;
 					width: $lastwidth2;
 				}
+
 			}
+
 		} // end $lg-bp
 
-		@media only screen and ( min-width: $xl-bp ) {
+		@media only screen and ( min-width: $lg-bp ) {
 
-			width: $itemwidth;
+			width: 	$itemwidth;
 			padding-right: $padside;
 
 			@if $rowitems <=1 { // Prevent weird broken values
@@ -483,7 +613,174 @@ $xl-bp:			75em !default;		// Set your x-large breakpoint
 					padding-right:0;
 					width: $lastwidth;
 				}
+
 			}
+
 		} // end $xl-bp
+
+	} // end 9+ items per row
+
+}
+
+
+@mixin pinkresponsive( $rowitems: $magicrow, $padtop: $magictop, $padside: $magicside, $align: $magicalign, $margin: $defaultmargin ) {
+
+	$itemwidth: ( 100% / $rowitems ); 	// width of items at maximum row size
+
+	display: inline-block;
+	vertical-align: $align;
+	margin-right: $margin; // Cancels out margin px issue with display:inline-block, may need to adjust based on body font;
+	width: 100%;
+	padding: $padtop $padside;
+
+	@if $rowitems <= 2 { // 2 items or less per row
+
+		@media only screen and ( min-width: $sm-bp ) {
+
+			width: ( 100% / $rowitems );
+			padding-right: $padside;
+
+			@if $rowitems <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+		} // end $sm-bp
+
+	} // end 2 items or less per row
+
+	@else if $rowitems == 3 { // 3 items per row
+
+		@media only screen and ( min-width: $tiny-bp ) and ( max-width: $med-bp ) {
+
+			$thisrow: 2; // intermediate row value, rounded up to nearest whole number
+			$itemwidth2: ( 100% / $thisrow );
+
+			width: $itemwidth2;
+
+			@if $thisrow <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+		} // end $sm-bp
+
+		@media only screen and ( min-width: $med-bp ) {
+
+			width: ( 100% / $rowitems );
+
+		} // end $med-bp
+
+	} // end 3 items per row
+
+	@else if $rowitems > 3 and $rowitems <= 6 { // 4 to 6 items per row
+
+		@media only screen and ( min-width: $tiny-bp ) and ( max-width: $med-bp ) {
+
+			$thisrow: ceil($rowitems/2); // intermediate row value, rounded up to nearest whole number
+			$itemwidth2: ( 100% / $thisrow );
+
+			width: $itemwidth2;
+
+			@if $thisrow <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+		} // end $sm-bp
+
+		@media only screen and ( min-width: $med-bp ) {
+
+			width: $itemwidth;
+
+		} // end $med-bp
+
+	} // end 4 to 6 items per row
+
+	@else if $rowitems > 6 and $rowitems <= 9 { // 7 to 9 items per row
+
+		@media only screen and ( min-width: $tiny-bp ) and ( max-width: $sm-bp ) {
+
+			$thisrow: 	ceil($rowitems/4); // intermediate row value, rounded up to nearest whole number
+			$itemwidth2: ( 100% / $thisrow );
+
+			width: $itemwidth2;
+
+			@if $thisrow <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+		} // end $sm-bp
+
+		@media only screen and ( min-width: $sm-bp ) and ( max-width: $med-bp ) {
+
+			$thisrow: ceil($rowitems/2); // intermediate row value, rounded up to nearest whole number
+			$itemwidth2: ( 100% / $thisrow );
+
+			width: $itemwidth2;
+
+		} // end $med-bp
+
+		@media only screen and ( min-width: $med-bp ) {
+
+			width: 	$itemwidth;
+
+			@if $rowitems <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+		} // end $lg-bp
+
+	} // end 7 to 10 items per row
+
+	@else if $rowitems > 9 { // 10+ items per row
+
+		@media only screen and ( min-width: $tiny-bp ) and ( max-width: $sm-bp ) {
+
+			$thisrow: ceil($rowitems/6); // intermediate row value, rounded up to nearest whole number
+			$itemwidth2: ( 100% / $thisrow );
+
+			width: $itemwidth2;
+
+			@if $thisrow <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+		} // end $sm-bp
+
+		@media only screen and ( min-width: $sm-bp ) and ( max-width: $med-bp ) {
+
+			$thisrow: ceil($rowitems/4); // intermediate row value, rounded up to nearest whole number
+			$itemwidth2: ( 100% / $thisrow );
+
+			width: $itemwidth2;
+
+			@if $rowitems <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+		} // end $med-bp
+
+		@media only screen and ( min-width: $lg-bp ) and ( max-width: $xl-bp ) {
+
+			$thisrow: ceil($rowitems/2); // intermediate row value, rounded up to nearest whole number
+			$itemwidth2: ( 100% / $thisrow );
+
+			width: $itemwidth2;
+
+			@if $rowitems <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+		} // end $lg-bp
+
+		@media only screen and ( min-width: $xl-bp ) {
+
+			width: $itemwidth;
+
+			@if $rowitems <=1 { // Prevent weird broken values
+				width:100%;
+			}
+
+		} // end $xl-bp
+
 	} // end 10+ items per row
+
 }

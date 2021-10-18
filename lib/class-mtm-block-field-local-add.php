@@ -263,12 +263,7 @@ function register_acf_innerblock_types() {
 // Check if function exists and hook into setup.
 if ( function_exists( 'acf_register_block_type' ) ) {
 	add_action( 'acf/init', 'register_acf_block_types' );
-}
-
-if ( get_option( 'acf_version' ) >= 5.9 ) {
-	if ( function_exists( 'acf_register_block_type' ) ) {
-		add_action( 'acf/init', 'register_acf_innerblock_types' );
-	}
+	add_action( 'acf/init', 'register_acf_innerblock_types' );
 }
 
 
